@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <link rel="icon" href="/favicon.ico?v=1" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=1" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png?v=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=1" />
+    <link rel="canonical" href="https://www.mariapaulaalzate.com/objetos" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Objetos con arte · María Paula Alzate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/whatsapp.css" />
+    <script src="assets/whatsapp-button.js" defer></script>
+    <style>
+      :root { --paper:#f6f1e8; --ink:#242328; --muted:#716a62; --line:rgba(36,35,40,.2); --blue:#176f9d; --pink:#dc4969; }
+      * { box-sizing:border-box; }
+      body { margin:0; color:var(--ink); background:var(--paper); font-family:"DM Sans",sans-serif; }
+      a { color:inherit; text-decoration:none; }
+      .topbar { display:flex; align-items:center; justify-content:space-between; gap:2rem; padding:1.25rem 3.6vw; border-bottom:1px solid var(--line); }
+      .brand { font:600 clamp(1.05rem,1.7vw,1.4rem)/1 "Archivo",sans-serif; letter-spacing:-.06em; }
+      .brand small { display:block; margin-top:.25rem; color:var(--muted); font:500 .6rem/1 "DM Mono",monospace; letter-spacing:.1em; text-transform:uppercase; }
+      .back { font:500 .7rem/1 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+      .page { padding:clamp(3rem,6vw,6rem) 3.6vw 5rem; }
+      .page-head { display:flex; justify-content:space-between; gap:2rem; align-items:end; padding-bottom:2rem; border-bottom:1px solid var(--line); }
+      .eyebrow { display:block; margin-bottom:.9rem; color:var(--pink); font:500 .7rem/1.25 "DM Mono",monospace; letter-spacing:.1em; text-transform:uppercase; }
+      h1 { max-width:10ch; margin:0; font:600 clamp(3.4rem,7vw,7.5rem)/.84 "Archivo",sans-serif; letter-spacing:-.1em; }
+      h1 em { color:var(--blue); font-style:normal; }
+      .page-head p { max-width:28rem; margin:0; color:var(--muted); font-size:1.05rem; line-height:1.5; }
+      .catalog { padding-top:clamp(3rem,5vw,5rem); }
+      .catalog-nav { display:flex; flex-wrap:wrap; gap:.6rem 1.3rem; margin-bottom:2.1rem; padding-bottom:1rem; border-bottom:1px solid var(--line); font:500 .8rem/1.3 "DM Mono",monospace; letter-spacing:.07em; text-transform:uppercase; }
+      .catalog-nav a { display:inline-flex; min-height:44px; align-items:center; }
+      .catalog a:focus-visible { outline:2px solid var(--blue); outline-offset:5px; }
+      .catalog-nav a:first-child { color:var(--blue); }
+      .product-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(1.5rem,3vw,3.5rem); }
+      .product { min-width:0; }
+      .product-media { display:grid; place-items:center; aspect-ratio:1; padding:1.5rem; background:#ede7dc; }
+      .product-media img { width:100%; height:100%; min-height:0; object-fit:contain; display:block; }
+      .product { scroll-margin-top:2rem; }
+      .design-count { margin:.9rem 0; color:var(--muted); font-size:.95rem; }
+      .object-stories { margin-top:clamp(3rem,6vw,6rem); padding-top:2rem; border-top:1px solid var(--line); }
+      .object-stories h2 { margin:0 0 1.8rem; font:600 clamp(2rem,4vw,3.5rem)/1.1 "Archivo",sans-serif; letter-spacing:-.04em; }
+      .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,3vw,3.5rem); }
+      .story-grid figure { margin:0; min-width:0; }
+      .story-grid img { display:block; width:100%; height:auto; }
+      .story-grid figcaption { margin-top:.8rem; color:var(--muted); font-size:.95rem; line-height:1.5; }
+      .product h2 { margin:1.25rem 0 .55rem; font:600 clamp(1.5rem,2.3vw,2.2rem)/.95 "Archivo",sans-serif; letter-spacing:-.065em; }
+      .price { margin:0; font:500 1.05rem/1.2 "DM Mono",monospace; letter-spacing:-.03em; }
+      .product-description { max-width:34rem; margin:1rem 0 0; color:var(--muted); font-size:.98rem; line-height:1.55; }
+      .buy { display:inline-flex; align-items:center; min-height:44px; margin-top:1rem; border-bottom:1px solid currentColor; font:500 .8rem/1.4 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+      footer { display:flex; justify-content:space-between; gap:1rem; padding:1.6rem 3.6vw 2rem; border-top:1px solid var(--line); color:var(--muted); font:500 .67rem/1.4 "DM Mono",monospace; letter-spacing:.07em; text-transform:uppercase; }
+      @media (max-width:900px) { .product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+      @media (max-width:640px) { .topbar,.page,footer { padding-inline:1.3rem; }.page-head { display:block; }.page-head p { margin-top:1.5rem; }.product-grid,.story-grid { grid-template-columns:1fr; }.product-grid { gap:3rem; } footer { display:block; } }
+    </style>
+  <link rel="stylesheet" href="assets/site-footer.css" />
+<link rel="stylesheet" href="assets/site-nav.css"><script src="assets/site-nav.js" defer></script></head>
+  <body>
+    <header class="mpa-header"><a class="mpa-header__brand" href="index.html">María Paula Alzate<small>Artista colombiana</small></a><nav class="mpa-header__links" aria-label="Accesos principales"><a class="mpa-header__home" href="index.html">Inicio</a><a href="tienda.html">Tienda</a><button class="mpa-menu-button" data-open-nav hidden type="button">Menú <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></nav></header>
+    <main class="page">
+      <header class="page-head"><div><span class="eyebrow">Objetos con arte</span><h1>Color para lo <em>cotidiano.</em></h1></div><p>Ediciones funcionales que trasladan el gesto de la obra a momentos de todos los días.</p></header>
+      <section class="catalog" aria-label="Catálogo de objetos con arte">
+        <nav class="catalog-nav" aria-label="Categorías de objetos"><a href="#toallas">Toallas</a><a href="#sombrillas">Sombrillas</a><a href="#panoletas">Pañoletas</a></nav>
+        <div class="product-grid">
+          <article class="product" id="toallas">
+            <div class="product-media"><img src="assets/objetos/toalla-azul-producto.png" alt="Toalla de playa plegada con diseño abstracto azul, verde y violeta" width="1024" height="1024" /></div>
+            <h2>Toalla de playa</h2>
+            <p class="design-count">2 diseños</p>
+            <p class="price">Precio por consulta</p>
+            <p class="product-description">Toalla de playa en edición de artista, con diseño abstracto de color y textura inspirado en la obra de María Paula Alzate.</p>
+            <a class="buy" href="https://wa.me/573187826651?text=Hola%2C%20quisiera%20consultar%20por%20las%20toallas%20de%20playa." target="_blank" rel="noopener noreferrer">Consultar / comprar</a>
+          </article>
+          <article class="product" id="sombrillas">
+            <div class="product-media"><img src="assets/objetos/sombrilla-multicolor-transparente.png" alt="Sombrilla abierta con estampado abstracto multicolor, sin fondo" width="1280" height="1280" /></div>
+            <h2>Sombrillas</h2><p class="design-count">3 diseños</p><p class="price">Precio por consulta</p>
+            <p class="product-description">El color de la obra acompaña tus recorridos. Esta imagen presenta uno de los tres diseños; consulta las opciones disponibles.</p>
+            <a class="buy" href="https://wa.me/573187826651?text=Hola%2C%20quisiera%20conocer%20los%20tres%20dise%C3%B1os%20de%20sombrillas." target="_blank" rel="noopener noreferrer">Consultar sombrillas</a>
+          </article>
+          <article class="product" id="panoletas">
+            <div class="product-media"><img src="assets/objetos/panoleta-en-uso.jpeg" alt="Pañoleta de estampado abstracto rojo, azul y blanco llevada sobre los hombros" width="960" height="1280" loading="lazy" /></div>
+            <h2>Pañoletas</h2><p class="design-count">Diseños por confirmar</p><p class="price">Precio por consulta</p>
+            <p class="product-description">Una forma de llevar el arte contigo. Fotografía de referencia; los diseños de la colección están por confirmar.</p>
+            <a class="buy" href="https://wa.me/573187826651?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20las%20pa%C3%B1oletas." target="_blank" rel="noopener noreferrer">Consultar pañoletas</a>
+          </article>
+        </div>
+      </section>
+      <section class="object-stories" aria-labelledby="objects-life"><h2 id="objects-life">El arte te acompaña.</h2><div class="story-grid">
+        <figure><img src="assets/objetos/toallas-dos-disenos-playa.jpeg" alt="Los dos diseños de toallas, uno en tonos coral y otro multicolor, sobre sillas en la playa" width="720" height="1280" loading="lazy" /><figcaption>Dos diseños de toallas para llevar el color a la playa.</figcaption></figure>
+        <figure><img src="assets/objetos/sombrilla-en-uso.jpeg" alt="Sombrilla multicolor abierta durante un paseo al aire libre" width="1200" height="1600" loading="lazy" /><figcaption>Uno de los tres diseños de sombrillas, en un recorrido cotidiano.</figcaption></figure>
+      </div></section>
+      <p><a class="buy" href="regalos-corporativos.html">Ver regalos corporativos</a></p>
+    </main>
+    <footer class="site-footer" id="contacto"><div class="site-footer__inner"><div class="site-footer__main"><a class="site-footer__identity" href="index.html" aria-label="María Paula Alzate — Inicio"><img class="site-footer__signature" draggable="false" src="assets/marca/firma-footer.png" alt="" width="80" /><span><span class="site-footer__name">María Paula Alzate</span><span class="site-footer__role">Artista colombiana</span></span></a><nav class="site-footer__nav" aria-label="Navegación del pie de página"><a href="index.html">Volver al inicio</a><a href="https://wa.me/573187826651?text=Hola%20Mar%C3%ADa%20Paula%2C%20quisiera%20hablar%20contigo%20sobre%20tus%20obras." target="_blank" rel="noopener noreferrer">+57 318 782 6651</a><a class="site-footer__instagram" href="https://www.instagram.com/mariapaulaalzate_kunst/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de María Paula Alzate"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a><a class="site-footer__instagram" href="https://www.tiktok.com/@mariaalzatekust" target="_blank" rel="noopener noreferrer" aria-label="TikTok de María Paula Alzate, @mariaalzatekust"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h3a5 5 0 0 0 4 4v3a8 8 0 0 1-4-1.1V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3Z" fill="currentColor" stroke="none"/></svg><span>TikTok</span></a></nav></div><div class="site-footer__bottom"><p class="site-footer__copyright">© María Paula Alzate · 2026</p><a class="site-footer__credit" href="https://www.danielaalzate.com/" target="_blank" rel="noopener noreferrer">powered by <strong>Daniela Alzate Studio</strong></a></div></div></footer>
+  </body>
+</html>

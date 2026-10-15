@@ -1,0 +1,35 @@
+@import url('brand-tokens.css');
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif}
+a{color:inherit;text-decoration:none}
+.shop-entry{width:min(100%,90rem);margin:auto;padding:clamp(2.5rem,5vw,5rem) max(1.3rem,3.6vw) clamp(4rem,7vw,7rem)}
+.shop-entry__intro{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:2.5rem}
+.shop-entry h1{margin:0;font:600 clamp(3.5rem,7vw,6rem)/.95 Archivo,sans-serif;letter-spacing:-.04em;text-wrap:balance}
+.shop-entry h1 em{color:var(--blue);font-style:normal}
+.shop-entry__intro p{max-width:26rem;margin:0;font-size:1.1rem;line-height:1.6}
+.shop-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem}
+.shop-path{min-width:0;display:flex;flex-direction:column;border-top:1px solid var(--rule);padding-top:1rem}
+.shop-path__image{display:block;aspect-ratio:1/1.1;overflow:hidden;background:var(--sand)}
+.shop-path__image img{width:100%;height:100%;object-fit:contain;display:block;padding:1.25rem;transition:transform .25s ease}
+.shop-path__image.photo img{object-fit:cover;padding:0}
+.shop-path__image:hover img{transform:scale(1.025)}
+.shop-path h2{margin:1.5rem 0 .8rem;font:600 clamp(1.65rem,2.5vw,2.4rem)/1.04 Archivo,sans-serif;letter-spacing:-.04em;text-wrap:balance}
+.shop-path p{margin:0 0 1.3rem;line-height:1.6;font-size:1rem;max-width:34ch}
+.shop-action{display:inline-flex;align-items:center;min-height:44px;align-self:flex-start;margin-top:auto;padding:.75rem 0;border-bottom:1px solid currentColor;font:500 .8rem/1.4 'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase}
+.shop-action:hover{color:var(--blue)}
+.shop-secondary{margin:2.5rem 0 0;padding-top:1rem;border-top:1px solid var(--rule);font-size:1rem;line-height:1.6}
+.shop-secondary a{text-decoration:underline;text-underline-offset:.3em;display:inline-block;min-height:44px;padding:.5rem 0}
+.shop-breadcrumb{display:flex;gap:.7rem;align-items:center;margin-bottom:2rem;font:500 .8rem/1.4 'DM Mono',monospace}
+.shop-breadcrumb a{padding:.7rem 0;text-decoration:underline;text-underline-offset:.25em}
+.series-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:2.5rem}
+.series-link{border-top:1px solid var(--rule);padding-top:1rem}
+.series-link img{width:100%;height:auto;aspect-ratio:1.5;display:block;object-fit:contain;background:var(--sand)}
+.series-link img[src*="folklore-transparente"],.series-link img[src*="expansiones-transparente"]{object-position:right center}
+.series-link img[src*="humanidad-compartida-banner-horizontal"]{object-fit:contain;object-position:right center}
+.series-link h2{margin:.9rem 0 .4rem;font:600 1.7rem/1.1 Archivo,sans-serif;letter-spacing:-.04em}
+.series-link:hover h2{color:var(--blue)}
+.series-link span{font:500 .75rem/1.5 'DM Mono',monospace;color:var(--muted)}
+@media(max-width:760px){.shop-entry__intro{display:block}.shop-entry__intro p{margin-top:1.25rem}.shop-paths{grid-template-columns:1fr;gap:2.8rem}.shop-path__image{aspect-ratio:1.35}.shop-path h2{margin-top:1.2rem;font-size:2rem}.shop-path p{max-width:none}.series-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 1rem}.series-link h2{font-size:1.3rem}}
+@media(prefers-reduced-motion:reduce){.shop-path__image img{transition:none}.shop-path__image:hover img{transform:none}}
+.series-framed-art{position:relative;display:block;aspect-ratio:1.5;background:var(--sand)}
+.series-link .series-framed-art img{position:absolute;top:50%;left:50%;width:auto;height:88%;aspect-ratio:1266/1280;transform:translate(-50%,-50%);object-fit:fill;background:transparent;clip-path:polygon(4.6% 4.9%,95% 4.7%,95% 94.4%,4.4% 94.7%)}

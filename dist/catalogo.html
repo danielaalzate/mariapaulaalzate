@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <link rel="icon" href="/favicon.ico?v=1" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=1" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png?v=1" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=1" />
+    <link rel="canonical" href="https://www.mariapaulaalzate.com/catalogo" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tienda de María Paula Alzate: obras de arte, objetos con arte y regalos corporativos." />
+    <title>Catálogo — María Paula Alzate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/whatsapp.css" />
+    <style>
+      :root { --paper:#f6f1e8; --ink:#242328; --muted:#716a62; --red:#b63848; --blue:#17638b; --gold:#e7c95f; --line:rgba(36,35,40,.16); }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; color:var(--ink); background:var(--paper); font-family:"DM Sans",sans-serif; }
+      a { color:inherit; text-decoration:none; }
+      .topbar { display:flex; justify-content:space-between; align-items:center; gap:2rem; padding:1.25rem 3.6vw; border-bottom:1px solid var(--line); }
+      .brand { font:600 clamp(1.05rem,1.7vw,1.4rem)/1 "Archivo",sans-serif; letter-spacing:-.06em; }
+      .brand small { display:block; margin-top:.3rem; color:var(--muted); font:500 .59rem/1 "DM Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
+      .back-link { color:var(--red); font:500 .68rem/1 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+      .store-page { width:min(100%,90rem); margin:0 auto; padding:clamp(3.5rem,7vw,7rem) clamp(1.3rem,3.6vw,3.6rem) 5rem; }
+      .store-intro { display:grid; grid-template-columns:minmax(14rem,.7fr) minmax(0,1.3fr); gap:5vw; padding-bottom:clamp(3rem,5vw,5rem); border-bottom:1px solid var(--line); }
+      .eyebrow { color:var(--red); font:500 .7rem/1.2 "DM Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
+      h1 { max-width:8ch; margin:.8rem 0 0; font:600 clamp(4rem,9vw,8rem)/.83 "Archivo",sans-serif; letter-spacing:-.09em; }
+      .store-intro-copy { max-width:42rem; align-self:end; }
+      .store-intro-copy p { margin:0; font-size:clamp(1.15rem,2vw,1.7rem); line-height:1.35; }
+      .store-intro-copy p + p { margin-top:1.2rem; color:var(--muted); font-size:1rem; line-height:1.6; }
+      .category-nav { display:flex; flex-wrap:wrap; gap:.65rem; padding:1.35rem 0 0; }
+      .category-nav a { padding:.68rem .9rem; border:1px solid var(--line); border-radius:999px; color:var(--muted); font:500 .66rem/1 "DM Mono",monospace; letter-spacing:.07em; text-transform:uppercase; transition:.2s ease; }
+      .category-nav a:hover, .category-nav a:focus-visible { color:var(--paper); background:var(--blue); border-color:var(--blue); }
+      .catalog-section { padding:clamp(3.8rem,6vw,6rem) 0 0; }
+      .section-head { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:1.7rem; }
+      .section-head h2 { margin:.45rem 0 0; font:600 clamp(2rem,4vw,3.6rem)/.9 "Archivo",sans-serif; letter-spacing:-.075em; }
+      .section-count { color:var(--muted); font:500 .64rem/1.2 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+      .product-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.25rem; }
+      .product-card { display:flex; flex-direction:column; min-width:0; }
+      .product-media { display:grid; place-items:center; aspect-ratio:1 / 1.04; overflow:hidden; background:#ebe5db; }
+      .product-media img { width:100%; height:100%; display:block; object-fit:contain; }
+      .product-media.photo img { object-fit:cover; transition:transform .4s ease; }
+      .product-card:hover .product-media.photo img { transform:scale(1.04); }
+      .product-media.artwork { background:#e8e1d7; }
+      .product-media.object { background:#f2eee6; }
+      .product-media.corporate { background:#f5f0e8; }
+      .product-media.corporate img { width:86%; height:86%; object-fit:contain; }
+      .product-media.corporate:has(img[src*="mariposa-flotante"]) img { width:100%; height:100%; }
+      .product-info { display:flex; flex-direction:column; flex:1; padding:1.15rem 0 .2rem; }
+      .product-category { color:var(--red); font:500 .63rem/1.2 "DM Mono",monospace; letter-spacing:.1em; text-transform:uppercase; }
+      #obras .product-category { display:none; }
+      #obras .product-card h3 { margin-top:0; }
+      #obras .product-card:nth-child(n+12) .product-media.artwork img { width:84%; height:84%; object-fit:contain; }
+      #obras .product-card:nth-child(n+15):nth-child(-n+18) .product-media.artwork img { width:76%; height:76%; }
+      #obras .product-card:nth-child(17) .product-media.artwork img { width:68%; height:68%; }
+      #obras .product-card:nth-child(22) .product-media.artwork img { width:80%; height:80%; }
+      .product-card h3 { margin:.45rem 0 .15rem; font:600 clamp(1.35rem,2vw,1.8rem)/.98 "Archivo",sans-serif; letter-spacing:-.055em; }
+      .product-series { margin:0; color:var(--muted); font:500 .7rem/1.35 "DM Mono",monospace; letter-spacing:.04em; text-transform:uppercase; }
+      .product-details { display:flex; flex-wrap:wrap; gap:.35rem .8rem; margin:.85rem 0 1.1rem; color:var(--muted); font-size:.82rem; }
+      .product-details span + span { padding-left:.8rem; border-left:1px solid var(--line); }
+      .product-footer { display:flex; justify-content:space-between; align-items:end; gap:1rem; margin-top:auto; padding-top:.85rem; border-top:1px solid var(--line); }
+      .product-price { font:600 1.05rem/1.2 "Archivo",sans-serif; letter-spacing:-.03em; }
+      .product-status { display:block; margin-top:.25rem; color:var(--muted); font:500 .6rem/1.2 "DM Mono",monospace; letter-spacing:.05em; text-transform:uppercase; }
+      .consult-link { flex:0 0 auto; padding:.63rem .78rem; border:1px solid var(--ink); font:500 .62rem/1 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; transition:.2s ease; }
+      .consult-link:hover, .consult-link:focus-visible { color:var(--paper); background:var(--ink); }
+      .sold .product-price { color:var(--muted); }
+      .store-note { margin-top:clamp(3rem,6vw,6rem); padding:1.25rem 0 0; border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; line-height:1.55; }
+      footer { width:min(100%,90rem); margin:0 auto; padding-left:clamp(1.3rem,3.6vw,3.6rem); padding-right:clamp(1.3rem,3.6vw,3.6rem); }
+      @media (max-width:820px) { .store-intro { grid-template-columns:1fr; gap:2rem; } .store-intro-copy { align-self:start; } .product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+      @media (max-width:560px) { .topbar { padding:1rem 1.3rem; } .back-link { font-size:.58rem; } .store-page { padding-top:3.5rem; } .section-head { display:block; } .section-count { display:block; margin-top:.7rem; } .product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.15rem .7rem; } .product-media { aspect-ratio:1 / .9; } .product-media.artwork { aspect-ratio:1 / 1.08; } .product-media.artwork img { width:90%; height:90%; } #obras .product-card:nth-child(n+12) .product-media.artwork img { width:84%; height:84%; } #obras .product-card:nth-child(n+15):nth-child(-n+18) .product-media.artwork img { width:76%; height:76%; } #obras .product-card:nth-child(17) .product-media.artwork img { width:68%; height:68%; } #obras .product-card:nth-child(22) .product-media.artwork img { width:80%; height:80%; } .product-info { padding-top:.8rem; } .product-card h3 { font-size:1.12rem; } .product-details { display:block; margin:.65rem 0 .8rem; font-size:.72rem; } .product-details span { display:block; } .product-details span + span { margin-top:.25rem; padding:0; border:0; } .product-footer { display:block; padding-top:.65rem; } .product-price { display:block; font-size:.85rem; } .product-status { font-size:.54rem; line-height:1.3; } .consult-link { display:block; width:100%; margin-top:.7rem; padding:.55rem .35rem; text-align:center; font-size:.56rem; } }
+    </style>
+    <style>
+      #objetos .product-category, #objetos .product-status { font-size:.75rem; line-height:1.4; }
+      #objetos .consult-link { display:inline-flex; align-items:center; justify-content:center; min-height:44px; font-size:.75rem; line-height:1.3; }
+      #objetos .product-media { position:relative; }
+      #objetos .product-media img { position:absolute; inset:8%; width:84%; height:84%; object-fit:contain; mix-blend-mode:normal; }
+    </style>
+  <link rel="stylesheet" href="assets/site-footer.css" />
+<link rel="stylesheet" href="assets/site-nav.css"><script src="assets/site-nav.js" defer></script></head>
+  <body>
+    <header class="mpa-header"><a class="mpa-header__brand" href="index.html">María Paula Alzate<small>Artista colombiana</small></a><nav class="mpa-header__links" aria-label="Accesos principales"><a class="mpa-header__home" href="index.html">Inicio</a><a href="tienda.html">Tienda</a><button class="mpa-menu-button" data-open-nav hidden type="button">Menú <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></nav></header>
+    <main class="store-page">
+      <section class="store-intro" aria-labelledby="store-title">
+        <div><a class="back-link" href="tienda.html">Volver a la tienda</a><h1 id="store-title">Catálogo.</h1></div>
+        <div class="store-intro-copy"><p>Obras, objetos y gestos con arte para acompañar espacios, historias y encuentros.</p><p>Explora las piezas disponibles y consulta directamente con la artista para conocer disponibilidad, envíos o pedidos especiales.</p><nav class="category-nav" aria-label="Categorías de la tienda"><a href="#obras">Obras de arte</a><a href="#objetos">Objetos con arte</a><a href="#regalos">Regalos corporativos</a></nav></div>
+      </section>
+
+      <section class="catalog-section" id="obras" aria-labelledby="obras-title">
+        <div class="section-head"><div><h2 id="obras-title">Obras de arte</h2></div><span class="section-count">22 obras registradas</span></div>
+        <div class="product-grid">
+          <article class="product-card sold">
+            <div class="product-media artwork"><img src="assets/fragmentos/ausencia-victoria-2025-producto-1000.png" alt="Obra Ausencia Victoria de la serie Fragmentos" /></div>
+            <div class="product-info"><span class="product-category">Obra original</span><h3>Ausencia Victoria</h3><p class="product-series">Fragmentos · 2025</p><div class="product-details"><span>174 × 91 cm</span><span>Técnica mixta</span></div><div class="product-footer"><div><span class="product-price">Vendida</span><span class="product-status">Consulta de obra</span></div><a class="consult-link" href="fragmentos.html">Ver obra</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/fragmentos/trascendencia/trascendencia-completa-transparente.png" alt="Obra Trascendencia de la serie Fragmentos" /></div>
+            <div class="product-info"><span class="product-category">Obra original</span><h3>Trascendencia</h3><p class="product-series">Fragmentos · 2025</p><div class="product-details"><span>202 × 100 cm</span><span>Técnica mixta</span></div><div class="product-footer"><div><span class="product-price">$12.580.000 COP</span><span class="product-status">Disponible · colección de la artista</span></div><a class="consult-link" href="fragmentos.html">Reservar</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/fragmentos/impermanencia-2025-producto-sin-sombra.png" alt="Obra Impermanencia de la serie Fragmentos" /></div>
+            <div class="product-info"><span class="product-category">Obra original</span><h3>Impermanencia</h3><p class="product-series">Fragmentos · 2025</p><div class="product-details"><span>110 cm de diámetro</span><span>Técnica mixta</span></div><div class="product-footer"><div><span class="product-price">$6.346.800 COP</span><span class="product-status">En galería</span></div><a class="consult-link" href="fragmentos.html">Consultar</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/tienda/obras/obra-1.png" alt="Obra 1" /></div>
+            <div class="product-info"><span class="product-category">Obra original</span><h3>Los Ojos de mi Madre</h3><p class="product-series">WOMAN · 2022</p><div class="product-details"><span>Ø 100 cm</span><span>Acrílico sobre lienzo</span></div><div class="product-footer"><div><span class="product-price">Consultar</span><span class="product-status">Disponible · colección de la artista</span></div><a class="consult-link" href="women.html">Ver serie</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/tienda/obras/obra-2.png" alt="Obra 2" /></div>
+            <div class="product-info"><span class="product-category">Obra original</span><h3>Cuando éramos los dos</h3><p class="product-series">Luces del alma · 2022</p><div class="product-details"><span>135 × 142 cm</span><span>Acrílico y pasteles grasos sobre lienzo</span></div><div class="product-footer"><div><span class="product-price">Consultar</span><span class="product-status">Disponible · colección de la artista</span></div><a class="consult-link" href="luces-del-alma.html">Ver serie</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/tienda/obras/obra-3.png" alt="Kintsugi for the soul, de la serie Tejidos" /></div>
+            <div class="product-info"><span class="product-category">Obra original</span><h3><i class="term-kintsugi">Kintsugi</i> for the soul</h3><p class="product-series">Tejidos · 2023</p><div class="product-details"><span>47 × 47 cm</span><span>Acrílico, pasteles al óleo, hojilla dorada, telas y lana sobre lienzo</span></div><div class="product-footer"><div><span class="product-price">Consultar</span><span class="product-status">Disponible · colección de la artista</span></div><a class="consult-link" href="tejidos.html">Ver serie</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/tienda/obras/obra-4.png" alt="Obra 4" /></div>
+            <div class="product-info"><span class="product-category">Escultura</span><h3>Needed balance</h3><p class="product-series">Albores · 2023</p><div class="product-details"><span>38,5 × 15 × 15 cm</span><span>Óleo · base en acero</span></div><div class="product-footer"><div><span class="product-price">Consultar</span><span class="product-status">Disponible · colección de la artista</span></div><a class="consult-link" href="albores.html">Ver serie</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/tienda/obras/obra-5.png" alt="Obra 5" /></div>
+            <div class="product-info"><span class="product-category">Escultura</span><h3>The Two of Us</h3><p class="product-series">Albores · 2022</p><div class="product-details"><span>Dimensiones por definir</span><span>Óleo · base en acero</span></div><div class="product-footer"><div><span class="product-price">Consultar</span><span class="product-status">Disponible · colección de la artista</span></div><a class="consult-link" href="albores.html">Ver serie</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/tienda/obras/obra-6.png" alt="Obra 6" /></div>
+            <div class="product-info"><span class="product-category">Obra original</span><h3>Los tejidos del alma</h3><p class="product-series">Serie por definir · 2023</p><div class="product-details"><span>95 × 95 cm</span><span>Acrílico, hojilla de cobre, textiles de lana y pasteles grasos</span></div><div class="product-footer"><div><span class="product-price">Consultar</span><span class="product-status">Disponible · colección de la artista</span></div><a class="consult-link" href="index.html#contacto">Reservar</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/tienda/obras/obra-7.png" alt="Valores de Oriente, de la serie Luces del alma" /></div>
+            <div class="product-info"><span class="product-category">Obra original</span><h3>Valores de Oriente</h3><p class="product-series">Luces del alma · 2024</p><div class="product-details"><span>75 × 65 cm</span><span>Hojilla dorada, acrílico y pasteles grasos sobre papel amate</span></div><div class="product-footer"><div><span class="product-price">Consultar</span><span class="product-status">Disponible · colección de la artista</span></div><a class="consult-link" href="luces-del-alma.html">Ver serie</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media artwork"><img src="assets/tienda/obras/obra-8.png" alt="Obra 8" /></div>
+            <div class="product-info"><span class="product-category">Obra original</span><h3>Wabi Sabi</h3><p class="product-series"><i class="term-kintsugi">Kintsugi</i> · 2023</p><div class="product-details"><span>28,5 × 28,5 cm con marco</span><span>Hojilla dorada y pasteles grasos sobre lino</span></div><div class="product-footer"><div><span class="product-price">Consultar</span><span class="product-status">Disponible · colección de la artista</span></div><a class="consult-link" href="kintsugi.html">Ver serie</a></div></div>
+          </article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-9.png" alt="Obra 9" /></div><div class="product-info"><h3>Obra 9</h3><p class="product-series">Información pendiente</p><div class="product-details"><span>Dimensiones por definir</span><span>Técnica por definir</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-10-v2.png" alt="Obra 10" /></div><div class="product-info"><h3>Obra 10</h3><p class="product-series">Información pendiente</p><div class="product-details"><span>Dimensiones por definir</span><span>Técnica por definir</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-11-v3.png" alt="Obra 11" /></div><div class="product-info"><h3>Obra 11</h3><p class="product-series">Información pendiente</p><div class="product-details"><span>Dimensiones por definir</span><span>Técnica por definir</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-12-v2.png" alt="Obra 12" /></div><div class="product-info"><h3>Obra 12</h3><p class="product-series">Información pendiente</p><div class="product-details"><span>Dimensiones por definir</span><span>Técnica por definir</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-13-v2.png" alt="Luz, grieta y florecer" /></div><div class="product-info"><h3>Luz, grieta y florecer</h3><p class="product-series"><i class="term-kintsugi">Kintsugi</i> · 2026</p><div class="product-details"><span>Dimensiones por definir</span><span>Hojillas y semillas de cedro sobre lino</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-14.png" alt="Obra 14" /></div><div class="product-info"><h3>Obra 14</h3><p class="product-series">Información pendiente</p><div class="product-details"><span>Dimensiones por definir</span><span>Técnica por definir</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-15-v3.png" alt="Obra 15" /></div><div class="product-info"><h3>Obra 15</h3><p class="product-series">Información pendiente</p><div class="product-details"><span>Dimensiones por definir</span><span>Técnica por definir</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-16.png" alt="Obra 16" /></div><div class="product-info"><h3>Obra 16</h3><p class="product-series">Información pendiente</p><div class="product-details"><span>Dimensiones por definir</span><span>Técnica por definir</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-17-v2.png" alt="La magia del corazón" /></div><div class="product-info"><h3>La magia del corazón</h3><p class="product-series">Outside the box · 2025</p><div class="product-details"><span>Ø 60 cm</span><span>Escultura de pared en óleo</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card"><div class="product-media artwork"><img src="assets/tienda/obras/obra-18.png" alt="La Casa" /></div><div class="product-info"><h3>La Casa</h3><p class="product-series">Outside the box · 2025</p><div class="product-details"><span>33 × 43 × 8 cm</span><span>Escultura de pared</span></div><div class="product-footer"><div><span class="product-price">Precio por definir</span><span class="product-status">Disponibilidad por confirmar</span></div><a class="consult-link" href="index.html#contacto">Consultar</a></div></div></article>
+          <article class="product-card gallery"><div class="product-media artwork"><img src="assets/tienda/obras/deshojando-margaritas-2025.jpg" alt="Deshojando Margaritas, de la serie Outside the Box" /></div><div class="product-info"><h3>Deshojando Margaritas</h3><p class="product-series">Outside the Box · 2025</p><div class="product-details"><span>123 × 53 × 9 cm</span><span>Escultura · técnica mixta</span></div><div class="product-footer"><div><span class="product-price">$8.000.000 COP</span><span class="product-status">En galería</span></div><a class="consult-link" href="outside-the-box.html">Consultar</a></div></div></article>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="objetos" aria-labelledby="objetos-title">
+        <div class="section-head"><div><span class="eyebrow">Ediciones para lo cotidiano</span><h2 id="objetos-title">Objetos con arte</h2></div><span class="section-count">Disponibles ahora</span></div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-media object"><img src="assets/objetos/toalla-azul-producto.png" alt="Toalla de playa con diseño de María Paula Alzate" /></div>
+            <div class="product-info"><span class="product-category">Objeto con arte</span><h3>Toalla de playa</h3><p class="product-series">Edición textil · 2025</p><div class="product-details"><span>2 diseños</span><span>Edición limitada</span></div><div class="product-footer"><div><span class="product-price">Precio por consulta</span><span class="product-status">Disponible</span></div><a class="consult-link" href="objetos.html#toallas">Ver diseños</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media object"><img src="assets/objetos/sombrilla-multicolor-transparente.png" alt="Sombrilla abierta con estampado abstracto multicolor, sin fondo" width="1280" height="1280" loading="lazy" /></div>
+            <div class="product-info"><span class="product-category">Objeto con arte</span><h3>Sombrillas</h3><p class="product-series">Arte para lo cotidiano</p><div class="product-details"><span>3 diseños</span><span>Imagen de uno de los diseños</span></div><div class="product-footer"><div><span class="product-price">Precio por consulta</span></div><a class="consult-link" href="objetos.html#sombrillas">Ver sombrillas</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media object"><img src="assets/objetos/panoleta-en-uso.jpeg" alt="Pañoleta de estampado abstracto llevada sobre los hombros" width="960" height="1280" loading="lazy" /></div>
+            <div class="product-info"><span class="product-category">Objeto con arte</span><h3>Pañoletas</h3><p class="product-series">Arte para llevar</p><div class="product-details"><span>Diseños por confirmar</span><span>Fotografía de referencia</span></div><div class="product-footer"><div><span class="product-price">Precio por consulta</span></div><a class="consult-link" href="objetos.html#panoletas">Ver pañoletas</a></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="regalos" aria-labelledby="regalos-title">
+        <div class="section-head"><div><span class="eyebrow">Para empresas</span><h2 id="regalos-title">Regalos corporativos</h2></div><span class="section-count">Cotización por cantidad</span></div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-media corporate"><img src="assets/regalos-corporativos/mini-mariposa-producto-transparente.png" alt="Escultura Mini Mariposa sobre base" /></div>
+            <div class="product-info"><span class="product-category">Regalo corporativo · Producto 1</span><h3>Escultura Mini Mariposa</h3><p class="product-series">Edición artística · 2025</p><div class="product-details"><span>8 × 8 × 6 cm</span><span>Precio por volumen</span></div><div class="product-footer"><div><span class="product-price">Desde $250.000 COP</span><span class="product-status">1 a 10 unidades: $280.000</span></div><a class="consult-link" href="regalos-corporativos.html">Consultar</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media corporate"><img src="assets/regalos-corporativos/mariposa-flotante-producto.png" alt="Mariposa flotante enmarcada" /></div>
+            <div class="product-info"><span class="product-category">Regalo corporativo · Producto 2</span><h3>Mariposa Flotante</h3><p class="product-series">Edición artística · 2025</p><div class="product-details"><span>28 × 23 cm</span><span>Enmarcada</span></div><div class="product-footer"><div><span class="product-price">Desde $260.000 COP</span><span class="product-status">1 a 5 unidades: $500.000</span></div><a class="consult-link" href="regalos-corporativos.html">Consultar</a></div></div>
+          </article>
+          <article class="product-card">
+            <div class="product-media corporate"><img src="assets/regalos-corporativos/bailarinas-hojilla-producto.png" alt="Bailarinas sobre hojilla sin enmarcar" /></div>
+            <div class="product-info"><span class="product-category">Regalo corporativo · Producto 3</span><h3>Bailarinas sobre hojilla</h3><p class="product-series">Edición artística · 2025</p><div class="product-details"><span>15 × 15 cm</span><span>Sin enmarcar</span></div><div class="product-footer"><div><span class="product-price">Desde $260.000 COP</span><span class="product-status">Precio por volumen</span></div><a class="consult-link" href="regalos-corporativos.html">Consultar</a></div></div>
+          </article>
+        </div>
+      </section>
+      <p class="store-note">¿Buscas una pieza específica, una cantidad especial o una fecha de entrega? Escríbele a María Paula para confirmar disponibilidad y recibir una cotización personalizada.</p>
+    </main>
+    <footer class="site-footer" id="contacto"><div class="site-footer__inner"><div class="site-footer__main"><a class="site-footer__identity" href="index.html" aria-label="María Paula Alzate — Inicio"><img class="site-footer__signature" draggable="false" src="assets/marca/firma-footer.png" alt="" width="80" /><span><span class="site-footer__name">María Paula Alzate</span><span class="site-footer__role">Artista colombiana</span></span></a><nav class="site-footer__nav" aria-label="Navegación del pie de página"><a href="index.html">Volver al inicio</a><a href="https://wa.me/573187826651?text=Hola%20Mar%C3%ADa%20Paula%2C%20quisiera%20hablar%20contigo%20sobre%20tus%20obras." target="_blank" rel="noopener noreferrer">+57 318 782 6651</a><a class="site-footer__instagram" href="https://www.instagram.com/mariapaulaalzate_kunst/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de María Paula Alzate"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a><a class="site-footer__instagram" href="https://www.tiktok.com/@mariaalzatekust" target="_blank" rel="noopener noreferrer" aria-label="TikTok de María Paula Alzate, @mariaalzatekust"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h3a5 5 0 0 0 4 4v3a8 8 0 0 1-4-1.1V16a6 6 0 1 1-6-6v3a3 3 0 1 0 3 3Z" fill="currentColor" stroke="none"/></svg><span>TikTok</span></a></nav></div><div class="site-footer__bottom"><p class="site-footer__copyright">© María Paula Alzate · 2026</p><a class="site-footer__credit" href="https://www.danielaalzate.com/" target="_blank" rel="noopener noreferrer">powered by <strong>Daniela Alzate Studio</strong></a></div></div></footer>
+    <a class="whatsapp-float" href="https://wa.me/573187826651?text=Hola%20Mar%C3%ADa%20Paula%2C%20quisiera%20hablar%20contigo%20sobre%20tus%20obras." target="_blank" rel="noopener noreferrer" aria-label="Contactar a María Paula por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.1 17.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6.1c-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.7.1-.2.1-.4 0-.6-.1-.1-.7-1.6-1-2.2-.3-.7-.5-.6-.7-.6h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.6 5 2.1.9 3 .9 4.1.8.7-.1 1.8-.7 2-1.4s.3-1.3.2-1.4c-.1-.2-.3-.3-.6-.4zM16 3.3a12.6 12.6 0 0 0-10.8 19l-1.6 5.9 6-1.6A12.7 12.7 0 1 0 16 3.3zm0 22.9c-2 0-3.9-.5-5.5-1.5l-.4-.2-3.5.9.9-3.4-.2-.4A10.5 10.5 0 1 1 16 26.2z"/></svg><span>Escríbenos por WhatsApp</span></a>
+    <script>
+      document.querySelectorAll('#obras .product-card:nth-child(n+12):not(.gallery)').forEach((card) => {
+        card.querySelector('.product-status').textContent = 'Disponible · colección de la artista';
+        const action = card.querySelector('.consult-link');
+        action.textContent = 'Reservar';
+        action.setAttribute('aria-label', 'Reservar obra');
+      });
+    </script>
+  </body>
+</html>
